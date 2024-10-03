@@ -1,0 +1,41 @@
+/* src/components/Navbar.css */
+.navbar {
+    background-color: #333;
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    width: 90%;
+    z-index: 1000;
+    top: 5%;
+    left: 5%;
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: #fff;
+    text-decoration: none;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 2rem;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+.nav-links a:hover {
+    color: #b85252;
+}
