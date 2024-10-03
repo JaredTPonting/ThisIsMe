@@ -1,0 +1,56 @@
+/* src/pages/Home.css */
+
+.home-container {
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 300px;
+    margin: 50px auto;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.description-box {
+    width: 60%;
+    padding: 20px;
+    background-color: #a1c7b0;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Poppins', sans-serif;
+}
+
+.description-box h2 {
+    margin: 0;
+    font-size: 1.8rem;
+}
+
+.description-box p {
+    font-size: 1.1rem;
+    color: #34495e;
+}
+
+.image-container {
+    position: absolute;
+    top: -50px;
+    right: 10%;
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 5px solid #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.image-container:hover img {
+    transform: scale(2); 
+}
+
+.profile-pic {
+    width: 200px;
+    right: 10%;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    scale: 2;
+}
