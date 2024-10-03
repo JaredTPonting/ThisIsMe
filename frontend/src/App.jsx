@@ -7,12 +7,13 @@ import Contact from './pages/Contact';
 import Blog from './pages/Blog';
 import ProtectedRoute from './components/ProtectedRoute';
 import Navbar from "./components/Navbar";
+import "./App.css"
 
 function App() {
   return (
     <BrowserRouter>
     <Navbar />
-    <div className="page-contents">
+    <div className="contents">
       <Routes>
         <Route path="/" element={<Home />}/>
         <Route path="/projects" element={<Projects />}/>
@@ -20,7 +21,7 @@ function App() {
         <Route path="/datavis" element={<DataVis />}/>
         <Route path="/contact" element={<Contact />}/>
       </Routes>
-      </div>
+    </div>
     </BrowserRouter>
   )
 }
