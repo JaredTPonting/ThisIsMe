@@ -50,11 +50,11 @@
 
 .nav-links a:hover {
     background-color: #1f3a31;
-    transition: 0.5s ease;
+    transition: 0.7s ease;
 }
 
 .nav-links a:active {
-    color: #f7a1fa; /* Red text when clicked */
+    color: #c4a7c4;
     transition: 0.1s ease;
 }
 
@@ -66,6 +66,6 @@
 
     .nav-links {
         flex-direction: column;
-        gap: 1rem; /* More space between items on smaller screens */
+        gap: 1rem;
     }
 }

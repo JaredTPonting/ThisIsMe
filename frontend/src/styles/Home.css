@@ -32,8 +32,8 @@
 
 .image-container {
     position: absolute;
-    top: -50px;
-    right: 10%;
+    top: -5px;
+    right: 15%;
     width: 150px;
     height: 150px;
     overflow: hidden;
@@ -43,14 +43,17 @@
 }
 
 .image-container:hover img {
-    transform: scale(2); 
+    transform: scale(2) translateX(-8%) translateY(5%);
+    transition: 0.3s ease;    
 }
 
 .profile-pic {
-    width: 200px;
-    right: 10%;
+    width: 150px;
     height: 150px;
     border-radius: 50%;
     object-fit: cover;
-    scale: 2;
+    object-position: 100% 50%;
+    scale: 2.5;
+    transition: 0.1s ease;
+    transform: translateX(-8%);
 }
