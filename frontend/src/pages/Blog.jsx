@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import "../styles/Blog.css";
+import { Link } from "react-router-dom";
 
 
 function Blog() {
@@ -24,7 +25,9 @@ function Blog() {
                     <div key={index} className="blog-card">
                         <img src={blog.image_url} alt={blog.title} className="blog-img"/>
                         <div className="blog-content">
+                            <Link to={`/blog/${blog.id}`}>
                             <h3 className="blog-title">{blog.title}</h3>
+                            </Link>
                             <p className="blog-teaser">{blog.content.substring(0, 100)}...</p>
                         </div>
                     </div>

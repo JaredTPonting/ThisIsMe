@@ -5,6 +5,7 @@ import Projects from './pages/Projects';
 import DataVis from './pages/DataVis';
 import Contact from './pages/Contact';
 import Blog from './pages/Blog';
+import BlogDetails from './pages/BlogDetails'
 import ProtectedRoute from './components/ProtectedRoute';
 import Navbar from "./components/Navbar";
 import "./styles/App.css"
@@ -18,6 +19,7 @@ function App() {
         <Route path="/" element={<Home />}/>
         <Route path="/projects" element={<Projects />}/>
         <Route path="/blog" element={<Blog />}/>
+        <Route path="/blog/:id" element={<BlogDetails />}/>
         <Route path="/datavis" element={<DataVis />}/>
         <Route path="/contact" element={<Contact />}/>
       </Routes>
