@@ -63,6 +63,7 @@ INSTALLED_APPS = [
     "projects",
     "api",
     "rest_framework",
+    "blogs"
 ]
 
 CORS_ALLOW_ALL_ORIGINS = True

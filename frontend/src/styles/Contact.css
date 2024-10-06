@@ -55,6 +55,8 @@
 
 .email-button:hover {
     color: #7a7e7d;
+    background-color: none;
+    background: none;
 }
 
 .popup {
