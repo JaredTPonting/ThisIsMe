@@ -1,4 +1,8 @@
 .tags-container {
+    position: sticky;
+    top: 120px;
+    padding: 10px 0;
+    z-index: 110;
     display: flex;
     justify-content: center; /* Align tags to the start */
     gap: 10px; /* Space between tags */
@@ -41,7 +45,8 @@
 .unselected-tag {
     background-color: #ffffff; /* Light background for unselected tags */
     color: #333; /* Dark text color for readability */
-    border: 1px solid #ddd; /* Light border for unselected tags */
+    border: 1px solid #548154;; /* Light border for unselected tags */
+    border-width: 3px;
 }
 
 .unselected-tag:hover {
