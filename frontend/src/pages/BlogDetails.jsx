@@ -39,7 +39,7 @@ function BlogDetails() {
                     </div>
                 </div>
             ) : (
-                <p>Loading blog details...</p>
+                <p className="temp-blog-loading">Loading blog details...</p>
             )}
         </div>
     );

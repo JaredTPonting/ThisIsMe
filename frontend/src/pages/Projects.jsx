@@ -9,6 +9,8 @@ Modal.setAppElement('#root');
 
 function Projects() {
     const [projects, setProjects] = useState([]);
+    const [tags, setTags] = useState([]);
+    const [selectedTags, setSelectedTags] = useState([]);
     const [selectedProject, setSelectedProject] = useState(null);
     const [modalIsOpen, setModalIsOpen] = useState(false);
 
@@ -21,6 +23,16 @@ function Projects() {
         .catch(err => {
             console.log("There was an error fetching the projects!", err);
         });
+
+        axios.get("http://127.0.0.1:8000/projects/tags")
+        .then(response => {
+            setTags(response.data);
+        })
+        .catch(err => {
+            console.log("Error fetching the tags!", err);
+        });
+
+        console.log(projects);
     }, []);
 
 
@@ -34,10 +46,36 @@ function Projects() {
         setModalIsOpen(false);
     };
 
+    const handleTagClick = (tag) => {
+        if (selectedTags.includes(tag)) {
+            setSelectedTags(selectedTags.filter(t => t != tag));
+        } else {
+            setSelectedTags([...selectedTags, tag])
+        }
+    };
+
+    const filteredProjects = selectedTags.length > 0
+        ? projects.filter(project =>
+            selectedTags.every(tag => project.tags.map(t => t.name).includes(tag))
+        )
+        : projects;
+
     return (
         <div className="projects-container">
-                {projects.length > 0 ? (
-                    projects.map((project, index) => (
+                <div className="tags-container">
+                    {tags.map(tag => (
+                        <button
+                            key={tag.name}
+                            onClick={() => handleTagClick(tag.name)}
+                            className={selectedTags.includes(tag.name) ? "selected-tag" : "unselected-tag"}
+                        >
+                            {tag.name}
+                        </button>
+                    ))}
+                </div>
+
+                {filteredProjects.length > 0 ? (
+                    filteredProjects.map((project, index) => (
                         <div key={index} className="project-card" onClick={() => openModal(project)}>
                             <img src={project.image} alt={project.title} className="project-image"/>
                             <h3 className="project-title">{project.title}</h3>

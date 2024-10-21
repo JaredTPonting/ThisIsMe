@@ -2,6 +2,9 @@
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
+    justify-content: space-around;
+    /* display: flex; */
+    flex-wrap: wrap;
 }
 
 .blog-card {
@@ -32,6 +35,11 @@
 
 .blog-content {
     flex-grow: 1;
+}
+
+.temp-blog-loading {
+    font-family: 'Poppins', sans-serif;
+    margin-left: 40%;
 }
 
 .blog-title {

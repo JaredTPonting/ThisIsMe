@@ -1,3 +1,53 @@
+.tags-container {
+    display: flex;
+    justify-content: center; /* Align tags to the start */
+    gap: 10px; /* Space between tags */
+    margin-bottom: 20px; /* Space below the tags */
+    width: 100%; /* Ensure the tags take full width */
+    font-family: 'Poppins', sans-serif;
+}
+
+.selected-tag {
+    background-color: #007BFF; /* Blue background for selected tags */
+    color: white; /* White text color for readability */
+    border: 1px solid #0056b3; /* Darker border for selected tags */
+    border-radius: 4px; /* Rounded corners */
+    padding: 8px 12px; /* Padding inside the button */
+    transition: background-color 0.2s; /* Smooth transition for hover effect */
+}
+
+.selected-tag,
+.unselected-tag {
+    height: 40px; /* Set a fixed height for the tag buttons */
+    display: flex; /* Use flex to center the text vertically */
+    align-items: center; /* Center the text vertically */
+    padding: 0 12px; /* Padding for left and right */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Change cursor to pointer */
+    transition: background-color 0.2s; /* Smooth transition for hover effect */
+    font-family: 'Poppins', sans-serif;
+}
+
+.selected-tag {
+    background-color: #548154; /* Blue background for selected tags */
+    color: white; /* White text color for readability */
+    border: 1px solid #548154; /* Darker border for selected tags */
+}
+
+.selected-tag:hover {
+    background-color: #3f613f; /* Darken on hover */
+}
+
+.unselected-tag {
+    background-color: #ffffff; /* Light background for unselected tags */
+    color: #333; /* Dark text color for readability */
+    border: 1px solid #ddd; /* Light border for unselected tags */
+}
+
+.unselected-tag:hover {
+    background-color: #e0e0e0; /* Darken on hover */
+}
+
 .projects-container {
     width: 90%;
     display: flex;
