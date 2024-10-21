@@ -8,7 +8,7 @@ function Blog() {
     const [blogs, setBlogs] = useState([])
 
     useEffect(() => {
-        axios.get("http://127.0.0.1:8000/blog/posts/")
+        axios.get("https://jtp-portfolio.herokuapp.com/blog/posts/")
         .then(response => {
             setBlogs(response.data)
             console.log(response.data)

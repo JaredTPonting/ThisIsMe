@@ -35,7 +35,7 @@
 .selected-tag {
     background-color: #548154; /* Blue background for selected tags */
     color: white; /* White text color for readability */
-    border: 1px solid #548154; /* Darker border for selected tags */
+    border: 3px solid #548154; /* Darker border for selected tags */
 }
 
 .selected-tag:hover {
@@ -45,8 +45,7 @@
 .unselected-tag {
     background-color: #ffffff; /* Light background for unselected tags */
     color: #333; /* Dark text color for readability */
-    border: 1px solid #548154;; /* Light border for unselected tags */
-    border-width: 3px;
+    border: 3px solid #91dd91;; /* Light border for unselected tags */
 }
 
 .unselected-tag:hover {

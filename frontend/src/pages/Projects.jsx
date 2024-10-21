@@ -15,7 +15,7 @@ function Projects() {
     const [modalIsOpen, setModalIsOpen] = useState(false);
 
     useEffect(() => {
-        axios.get("http://127.0.0.1:8000/projects/projects")
+        axios.get("https://jtp-portfolio.herokuapp.com/projects/")
         .then(response => {
             setProjects(response.data);
             
@@ -24,7 +24,7 @@ function Projects() {
             console.log("There was an error fetching the projects!", err);
         });
 
-        axios.get("http://127.0.0.1:8000/projects/tags")
+        axios.get("https://jtp-portfolio.herokuapp.com/projects/tags")
         .then(response => {
             setTags(response.data);
         })
