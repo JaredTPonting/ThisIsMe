@@ -13,6 +13,14 @@ const Home = () => {
         <div className="image-container">
           <img src={profileImage} alt="Your Name" className="profile-pic" />
         </div>
+        <div className="description-box">
+          <h2>Experience</h2>
+          <p>Welcome to my portfolio website! I'm a Python developer and data professional with experience in software engineering, data analysis, and networking. Explore my projects, blog, and more.</p>
+        </div>
+        <div className="description-box">
+          <h2>Education</h2>
+          <p>Welcome to my portfolio website! I'm a Python developer and data professional with experience in software engineering, data analysis, and networking. Explore my projects, blog, and more.</p>
+        </div>
       </div>
     );
   };
