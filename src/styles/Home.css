@@ -15,7 +15,7 @@
 .description-box {
     width: 60%;
     padding: 30px;
-    background-color: #a1c7b0;
+    background-color: #1E1E1E;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     font-family: 'Poppins', sans-serif;
@@ -25,14 +25,16 @@
 .description-box h2 {
     margin: 0;
     font-size: 1.8rem;
+    color: #F5F5F5;
 }
 
 .description-box p {
     font-size: 1.1rem;
     color: #34495e;
+    color: #F5F5F5;
 }
 
-.image-container {
+.profile-image-container {
     position: absolute;
     top: -5px;
     right: 15%;
@@ -40,11 +42,13 @@
     height: 150px;
     overflow: hidden;
     border-radius: 50%;
+    border-color: #E76F51;
+    color: #E76F51;
     border: 5px solid #fff;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.image-container:hover img {
+.profile-image-container:hover img {
     transform: scale(2) translateX(-8%) translateY(5%);
     transition: 0.3s ease;    
 }
@@ -53,6 +57,7 @@
     width: 150px;
     height: 150px;
     border-radius: 50%;
+    border-color: #1E1E1E;
     object-fit: cover;
     object-position: 100% 50%;
     scale: 2.5;
