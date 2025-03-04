@@ -32,16 +32,6 @@
     color: #34495e;
 }
 
-.experience-box {
-    width: 60%;
-    padding: 30px;
-    background-color: #a1c7b0;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    font-family: 'Poppins', sans-serif;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
 .image-container {
     position: absolute;
     top: -5px;

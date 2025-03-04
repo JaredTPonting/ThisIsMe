@@ -1,6 +1,6 @@
-/* src/components/Navbar.css */
+/* Modernized Navbar Styling */
 .navbar {
-    background-color: #548154;
+    background-color: #1E1E1E; /* Dark Gray */
     padding: 10px;
     position: fixed;
     top: 0;
@@ -9,25 +9,29 @@
     margin-left: 2%;
     margin-right: 2%;
     margin-top: 1%;
-    border-radius: 15px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     font-family: 'Poppins', sans-serif;
 }
 
+/* Container */
 .navbar-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
+/* Logo */
 .logo {
-    color: #ffffff;
+    color: #F5F5F5; /* Light Gray/White */
     text-decoration: none;
     font-size: 1.8rem;
     cursor: pointer;
     padding-left: 3%;
+    font-weight: 600;
 }
 
+/* Nav Links */
 .nav-links {
     list-style: none;
     display: flex;
@@ -41,32 +45,63 @@
 }
 
 .nav-links a {
-    color: #fff;
+    color: #F5F5F5; /* Light Gray */
     text-decoration: none;
     font-size: 1.1rem;
-    transition: color 0.2s ease;
-    padding: 0.5rem;
-    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
 }
 
+/* Hover & Active States */
 .nav-links a:hover {
-    background-color: #1f3a31;
-    transition: 0.7s ease;
+    background-color: #333333; /* Slightly Lighter Dark Gray */
+    color: #F4A261; /* Warm Orange Accent */
+    transition: 0.3s ease;
 }
 
 .nav-links a:active {
-    color: #c4a7c4;
+    color: #E76F51; /* Slightly Darker Accent for Click Effect */
     transition: 0.1s ease;
 }
 
-@media (max-width: 500px) {
-    .navbar-container {
-        flex-direction: column;
-        align-items: flex-start;
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.bar {
+    background-color: #F5F5F5; /* White */
+    height: 3px;
+    width: 30px;
+    margin: 5px 0;
+    transition: 0.4s;
+    border-radius: 5px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
     }
 
     .nav-links {
+        position: absolute;
+        top: 60px;
+        right: 2%;
+        background-color: #1E1E1E;
         flex-direction: column;
-        gap: 1rem;
+        width: 220px;
+        padding: 1rem;
+        border-radius: 12px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+        display: none;
+    }
+
+    .nav-links.open {
+        display: flex;
     }
 }
