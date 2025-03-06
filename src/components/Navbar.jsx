@@ -10,7 +10,6 @@ const Navbar = forwardRef((props, ref) => {
           <ul className="nav-links">
             <li><Link to="/">Home</Link></li>
             <li><Link to="/projects">Projects</Link></li>
-            <li><Link to="/blog">Blog</Link></li>
             <li><Link to="/contact">Contact</Link></li>
           </ul>
         </div>
