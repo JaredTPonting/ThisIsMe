@@ -17,9 +17,9 @@ body {
 .intro-box {
   display: flex;
   flex-direction: row;
-  align-items: center;            /* Vertically centers the children */
+  align-items: center;
   width: 100%;
-  max-width: 900px;               /* Wider than the text boxes below (800px max) */
+  max-width: 900px;
   padding: 20px;
   margin-bottom: 20px;
   border-radius: 10px;
@@ -45,7 +45,7 @@ body {
   height: 150px;
   border-radius: 50%;
   object-fit: cover;
-  border: 5px solid #E76F51;  /* Using the same orange border */
+  border: 5px solid #E76F51;  /* ORANGE */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
@@ -60,13 +60,13 @@ body {
   flex-direction: column;
   gap: 20px;
   width: 80%;
-  max-width: 800px; /* Ensures all boxes have equal, responsive width */
+  max-width: 800px;
 }
 
 /* Individual text box styling */
 .text-box {
-  background-color: #1E1E1E;
-  color: #F5F5F5;
+  background-color: #1E1E1E; /* DARK GREY */
+  color: #F5F5F5; /* OFF WHITE */
   padding: 30px;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
