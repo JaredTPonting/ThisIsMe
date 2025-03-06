@@ -6,13 +6,32 @@
     margin: 50px auto;
     justify-content: center;
     align-items: center;
+    top:120px;
+}
+
+/* Define a common icon class */
+.contact-icon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  margin-right: 8px;
+}
+
+/* Style each list item with flexbox for proper alignment */
+.contact-list li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 15px;
+  font-size: 1.5rem;
 }
 
 .contact-box {
     width: 20%;
     height: 100%;
     padding: 20px;
-    background-color: #a1c7b0;
+    background-color: #E76F51;
+    color: #F5F5F5;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     font-family: 'Poppins', sans-serif;
