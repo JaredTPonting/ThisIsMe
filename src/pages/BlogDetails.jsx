@@ -10,7 +10,7 @@ function BlogDetails() {
     const navigate = useNavigate();
 
     useEffect(() => {
-        axios.get(`https://jtp-port-backend-9acb82a1ef1b.herokuapp.com/blog/posts/${id}/`)
+        axios.get(`https://thisismebackend.onrender.com/blog/posts/${id}/`)
             .then(response => {
                 setBlog(response.data);
             })

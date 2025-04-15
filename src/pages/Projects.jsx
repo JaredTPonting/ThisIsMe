@@ -15,7 +15,7 @@ function Projects() {
     const [modalIsOpen, setModalIsOpen] = useState(false);
 
     useEffect(() => {
-        axios.get("https://jtp-port-backend-9acb82a1ef1b.herokuapp.com/projects/projects")
+        axios.get("https://thisismebackend.onrender.com/projects/projects")
         .then(response => {
             setProjects(response.data);
             
@@ -24,7 +24,7 @@ function Projects() {
             console.log("There was an error fetching the projects!", err);
         });
 
-        axios.get("https://jtp-port-backend-9acb82a1ef1b.herokuapp.com/projects/tags")
+        axios.get("https://thisismebackend.onrender.com/projects/tags")
         .then(response => {
             setTags(response.data);
         })
