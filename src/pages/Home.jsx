@@ -31,7 +31,7 @@ Right now, the site includes a project portfolio and my CV. There’s also a blo
           </p>
         </div>
         <div className="text-box">
-          <h2>Experience and eduication etc </h2>
+          <h2>Experience and Education</h2>
           <p>
             I currently work as a Merchandising Data Scientist at JD Sports Fashion PLC, where I’ve been for the past three years. I started out as a Junior and grew into my current role, working across a range of projects involving retail data, SQL pipelines, and full-stack development.<br /><br />
 
