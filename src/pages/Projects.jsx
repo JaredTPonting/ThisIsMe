@@ -103,6 +103,7 @@ function Projects() {
                         <div className="modal-content-right">
                             <img src={selectedProject.image} alt={selectedProject.title} className="modal-image" />
                             <a href={selectedProject.github_url} target="_blank" rel="noopener noreferrer">GitHub</a>
+                            <a href={selectedProject.live_demo_url} target="_blank" rel="noopener noreferrer">Demo</a>
                         </div>
                     </div>
                     <div className="modal-markdown">
