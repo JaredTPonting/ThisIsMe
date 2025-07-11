@@ -8,6 +8,7 @@ import Blog from './pages/Blog';
 import BlogDetails from './pages/BlogDetails'
 import ProtectedRoute from './components/ProtectedRoute';
 import Navbar from "./components/Navbar";
+import ExtrasHome from "./pages/ExtrasHome";
 import "./styles/App.css"
 
 
@@ -42,6 +43,7 @@ function App() {
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:id" element={<BlogDetails />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/extras" element={<ExtrasHome />} />
         </Routes>
       </div>
     </BrowserRouter>
