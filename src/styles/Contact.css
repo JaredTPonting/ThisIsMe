@@ -1,92 +1,96 @@
 .contact-container {
     display: flex;
-    position: relative;
-    width: 100%;
-    height: 300px;
-    margin: 50px auto;
     justify-content: center;
     align-items: center;
-    top:120px;
-}
-
-/* Define a common icon class */
-.contact-icon {
-  width: 24px;
-  height: 24px;
-  object-fit: contain;
-  margin-right: 8px;
-}
-
-/* Style each list item with flexbox for proper alignment */
-.contact-list li {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 15px;
-  font-size: 1.5rem;
+    padding: 4rem 1rem;
+    min-height: 100vh;
+    box-sizing: border-box;
+    margin-top: 120px;
 }
 
 .contact-box {
-    width: 20%;
-    height: 100%;
-    padding: 20px;
     background-color: #E76F51;
     color: #F5F5F5;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    padding: 2rem;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     font-family: 'Poppins', sans-serif;
-
 }
 
 .contact-header {
-    text-align: center;  
-    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
 }
 
 .contact-list {
-    margin: 10px;
-    text-decoration: none;
-    color: #36502c;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
 }
 
 .contact-list li {
-    padding: 5px;
-    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.2rem;
+    flex-wrap: wrap;
 }
 
-.contact-list li a {
-    text-decoration: none;
-    color: #2c3e50;
-}
-
-.contact-list li a:hover {
-    color: #7a7e7d;
-}
-
+.contact-list li a,
 .email-button {
-    font-size: 1.5rem;
+    text-decoration: none;
     color: #2c3e50;
     background: none;
     border: none;
     cursor: pointer;
-    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
 }
 
+.contact-list li a:hover,
 .email-button:hover {
-    color: #7a7e7d;
-    background-color: none;
-    background: none;
+    color: #ffffffb0;
+}
+
+.contact-icon {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
 }
 
 .popup {
-    margin-top: 10px;
-    padding: 5px 10px;
-    background-color: #2ecc71;
-    color: white;
-    border-radius: 5px;
-    font-size: 0.9rem;
-    position: absolute;
-    top: 80%;
-    right: 47%;
-    opacity: 0.7;
+  margin-top: 0.4rem;
+  background-color: #2ecc71;
+  color: white;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  padding: 0.3rem 0.8rem;
+  display: inline-block;
+}
+
+
+/* Responsive */
+@media (max-width: 480px) {
+    .contact-box {
+        padding: 1.5rem;
+    }
+
+    .contact-header {
+        font-size: 1.6rem;
+    }
+
+    .contact-list li {
+        font-size: 1rem;
+        gap: 0.8rem;
+    }
+
+    .popup {
+        font-size: 0.8rem;
+    }
 }

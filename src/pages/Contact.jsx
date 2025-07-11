@@ -9,7 +9,7 @@ function Contact() {
     const [copied, setCopied] = useState(false);
 
     const handleCopyEmail = () => {
-        navigator.clipboard.writeText("jaredtponting@gmail.com")
+        navigator.clipboard.writeText("jaredtponting@outlook.com")
         .then(() => {
             setCopied(true);
             setTimeout(() => setCopied(false), 1500);
@@ -33,11 +33,13 @@ function Contact() {
                     LinkedIn</a>
                 </li>
                 <li>
-                    <img src={emailIcon} alt="Email"  className="contact-icon"/>
-                    <button className="email-button" onClick={handleCopyEmail}>
-                        Copy Email
-                    </button>
-                    {copied && <div className="popup">Email Copied!</div>}
+                  <img src={emailIcon} alt="Email" className="contact-icon" />
+                  <a
+                    href="mailto:jaredtponting@outlook.com"
+                    className="contact-email"
+                  >
+                    Email Me
+                  </a>
                 </li>
             </ul>
         </div>
