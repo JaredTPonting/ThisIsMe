@@ -53,6 +53,12 @@
     border-radius: 8px;
 }
 
+/* Add z-index to nav-links in mobile */
+.nav-links {
+  z-index: 99;
+}
+
+
 /* Hover & Active States */
 .nav-links a:hover {
     background-color: #333333; /* Slightly Lighter Dark Gray */
