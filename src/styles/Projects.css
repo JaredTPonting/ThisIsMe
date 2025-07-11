@@ -2,7 +2,7 @@
     position: sticky;
     top: 120px;
     padding: 10px 0;
-    z-index: 110;
+    z-index: 90;
     display: flex;
     justify-content: center; /* Align tags to the start */
     gap: 10px; /* Space between tags */
