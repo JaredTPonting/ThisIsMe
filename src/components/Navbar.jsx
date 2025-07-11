@@ -24,6 +24,7 @@ const Navbar = forwardRef((props, ref) => {
           <li><Link to="/" onClick={() => setIsOpen(false)}>Home</Link></li>
           <li><Link to="/projects" onClick={() => setIsOpen(false)}>Projects</Link></li>
           <li><Link to="/contact" onClick={() => setIsOpen(false)}>Contact</Link></li>
+          <li><Link to="/extras" onClick={() => setIsOpen(false)}>Extras</Link></li>
         </ul>
       </div>
     </nav>
