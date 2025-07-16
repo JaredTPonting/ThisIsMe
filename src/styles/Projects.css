@@ -4,46 +4,48 @@
     padding: 10px 0;
     z-index: 90;
     display: flex;
-    justify-content: center; /* Align tags to the start */
-    gap: 10px; /* Space between tags */
-    margin-bottom: 20px; /* Space below the tags */
-    width: 100%; /* Ensure the tags take full width */
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    width: 90%;
     font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
 }
 
 .selected-tag,
 .unselected-tag {
-    height: 40px; /* Set a fixed height for the tag buttons */
-    display: flex; /* Use flex to center the text vertically */
-    align-items: center; /* Center the text vertically */
-    padding: 0 12px; /* Padding for left and right */
-    border-radius: 4px; /* Rounded corners */
-    cursor: pointer; /* Change cursor to pointer */
-    transition: background-color 0.2s; /* Smooth transition for hover effect */
+    height: 40px;
+    display: flex;
+    align-items: center;
+    padding: 0 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
     font-family: 'Poppins', sans-serif;
 }
 
 .selected-tag {
-    background-color: #1E1E1E; /* Blue background for selected tags */
-    color: white; /* White text color for readability */
-    border: 3px solid #1E1E1E; /* Darker border for selected tags */
-    border-radius: 4px; /* Rounded corners */
-    padding: 8px 12px; /* Padding inside the button */
-    transition: background-color 0.2s; /* Smooth transition for hover effect */
+    background-color: #1E1E1E;
+    color: white;
+    border: 3px solid #1E1E1E;
+    border-radius: 4px;
+    padding: 8px 12px;
+    transition: background-color 0.2s;
 }
 
 .selected-tag:hover {
-    background-color: #454545; /* Darken on hover */
+    background-color: #454545;
 }
 
 .unselected-tag {
-    background-color: #ffffff; /* Light background for unselected tags */
-    color: #333; /* Dark text color for readability */
-    border: 3px solid #454545; /* Light border for unselected tags */
+    background-color: #ffffff;
+    color: #333;
+    border: 3px solid #454545;
 }
 
 .unselected-tag:hover {
-    background-color: #e0e0e0; /* Darken on hover */
+    background-color: #e0e0e0;
 }
 
 .projects-container {
@@ -129,19 +131,16 @@
     border-radius: 10px;
 }
 
-/* Hide scrollbar for Webkit browsers (Chrome, Safari, Edge) */
 .modal::-webkit-scrollbar {
-    display: none; /* This hides the scrollbar */
+    display: none;
 }
 
-/* For Firefox */
 .modal {
-    scrollbar-width: none; /* Hide scrollbar */
+    scrollbar-width: none;
 }
 
-/* Optionally, this hides scrollbar for Internet Explorer and Edge (older versions) */
 .modal {
-    -ms-overflow-style: none; /* Hide scrollbar */
+    -ms-overflow-style: none;
 }
 
 .close-button {
@@ -166,7 +165,7 @@
     right: 0;
     bottom: 0;
     background-color: rgba(0, 26, 13, 0.75);
-    z-index: 999; /* Ensure the overlay is behind the modal but covers the rest of the page */
+    z-index: 999;
 }
 
 .modal-header {
