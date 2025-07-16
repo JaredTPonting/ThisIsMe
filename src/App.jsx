@@ -9,6 +9,7 @@ import BlogDetails from './pages/BlogDetails'
 import ProtectedRoute from './components/ProtectedRoute';
 import Navbar from "./components/Navbar";
 import ExtrasHome from "./pages/ExtrasHome";
+import WorkoutApp from './pages/workoutAssistant/WorkoutApp';
 import "./styles/App.css"
 
 
@@ -19,19 +20,19 @@ function App() {
   useLayoutEffect(() => {
     const updateNavHeight = () => {
       if (navRef.current) {
-        console.log("Navbar Ref:", navRef.current); // Ensure the ref is correct
+        console.log("Navbar Ref:", navRef.current);
         const height = navRef.current.offsetHeight;
-        console.log("Navbar height (offsetHeight):", height); // Debug height value
+        console.log("Navbar height (offsetHeight):", height);
         setNavHeight(height);
       }
     };
 
-    updateNavHeight(); // Measure height after the render
+    updateNavHeight();
 
-    window.addEventListener("resize", updateNavHeight); // Recalculate on resize
+    window.addEventListener("resize", updateNavHeight);
 
-    return () => window.removeEventListener("resize", updateNavHeight); // Cleanup
-  }, []); // Empty dependency ensures this runs once after mount
+    return () => window.removeEventListener("resize", updateNavHeight);
+  }, []);
 
   return (
     <BrowserRouter>
@@ -44,6 +45,7 @@ function App() {
           <Route path="/blog/:id" element={<BlogDetails />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/extras" element={<ExtrasHome />} />
+          <Route path="/extras/workout" element={<WorkoutApp />} />
         </Routes>
       </div>
     </BrowserRouter>
