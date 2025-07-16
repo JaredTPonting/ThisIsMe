@@ -17,17 +17,17 @@ const Home = () => {
         <div className="text-box">
           <h2>About me</h2>
           <p>
-            Hi, I’m Jared — a Merchandising Data Scientist with a background in mathematics and a love for building things from scratch. Whether it’s developing full-stack apps or wrangling raw data into clear, actionable insights, I enjoy the process of creating something useful from the ground up.<br /><br />
+            Hi, I’m Jared. A Merchandising Data Scientist with a background in mathematics and a love for building things from scratch. Whether it’s developing full-stack apps or wrangling raw data into clear, actionable insights, I enjoy the process of creating something useful from the ground up.<br /><br />
 
-I’m fluent in Python, SQL, and Java, and always curious to pick up new tools and skills along the way. Outside of work, you’ll usually find me at the gym, making something with my hands through arts and crafts, or exploring new places while travelling. I like to keep things fun and upbeat, both in and out of work.
+I’m fluent in Python, SQL, and Java, and always curious to pick up new tools and skills along the way.
           </p>
         </div>
         <div className="text-box">
           <h2>About this website</h2>
           <p>
-            This website is something I’ve built and deployed myself — a personal space to host and showcase the projects I’ve worked on, and to have something I can iterate on and grow over time. It’s not just for recruiters (though hi if you’re one!) — it’s also for me, to track what I’ve done and where I want to go next.<br /><br />
+            This website is something I’ve built and deployed myself. It's a personal space to host and showcase the projects I’ve worked on, and to have something I can iterate on and grow over time. It’s not just for recruiters (though hi if you’re one!) it’s also for me, to track what I’ve done and where I want to go next.<br /><br />
 
-Right now, the site includes a project portfolio and my CV. There’s also a blog section under the hood — I’ve built the structure, but I’m not quite in the blogging mindset yet. Everything here is built with React and Django, both of which were new technologies to me when I started this site — so even though I’m not shouting from the rooftops about it, it’s been a good learning experience.
+Everything here is built with React and Django, both of which were new technologies to me when I started this site, so even though I’m not shouting from the rooftops about it, it’s been a good learning experience.
           </p>
         </div>
         <div className="text-box">
