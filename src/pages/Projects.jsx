@@ -15,7 +15,7 @@ function Projects() {
     const [modalIsOpen, setModalIsOpen] = useState(false);
 
     useEffect(() => {
-        axios.get("https://thisismebackend.onrender.com/projects/projects")
+        axios.get("https://portfoliobackenddjango.onrender.com/api/projects")
         .then(response => {
             setProjects(response.data);
             
@@ -24,7 +24,7 @@ function Projects() {
             console.log("There was an error fetching the projects!", err);
         });
 
-        axios.get("https://thisismebackend.onrender.com/projects/tags")
+        axios.get("https://portfoliobackenddjango.onrender.com/api/tags/")
         .then(response => {
             setTags(response.data);
         })
@@ -33,6 +33,7 @@ function Projects() {
         });
 
         console.log(projects);
+        console.log(tags);
     }, []);
 
     const openModal = (project) => {
