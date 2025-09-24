@@ -15,7 +15,7 @@ function Projects() {
     const [modalIsOpen, setModalIsOpen] = useState(false);
 
     useEffect(() => {
-        axios.get("https://portfoliobackenddjango.onrender.com/api/projects")
+        axios.get("https://portfoliobackenddjango.onrender.com/api/projects/")
         .then(response => {
             setProjects(response.data);
             
