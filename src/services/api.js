@@ -5,7 +5,6 @@ export const apiFetch = async (url, options = {}) => {
         "Content-Type": "application/json",
         ...options.headers
     };
-    console.log(BASE_URL + url);
     const res = await fetch(BASE_URL + url, {...options, headers});
     if(res.status === 204) return null;
     if (res.status ===404) return null;
@@ -18,7 +17,7 @@ export const apiFetch = async (url, options = {}) => {
 
 // Projects
 
-export const getTags = () => apiFetch("/projects/tags/");
+export const getTags = () => apiFetch("/tags/");
 
-export const getProjects = () => apiFetch("/projects/projects/");
+export const getProjects = () => apiFetch("/projects/");
 
