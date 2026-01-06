@@ -18,7 +18,7 @@ export const apiFetch = async (url, options = {}) => {
 
 // Projects
 
-export const getTags = () => apiFetch("/api/tags/");
+export const getTags = () => apiFetch("/tags/");
 
-export const getProjects = () => apiFetch("/api/projects/");
+export const getProjects = () => apiFetch("/projects/");
 
