@@ -1,12 +1,10 @@
-import react from "react"
-import { useRef, useState, useEffect, useLayoutEffect  } from "react";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom"
+import { useRef, useState, useLayoutEffect  } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom"
 import Home from './pages/Home';
 import Projects from './pages/Projects';
 import Contact from './pages/Contact';
 import Blog from './pages/Blog';
 import BlogDetails from './pages/BlogDetails'
-import ProtectedRoute from './components/ProtectedRoute';
 import Navbar from "./components/Navbar";
 import ExtrasHome from "./pages/ExtrasHome";
 import WorkoutApp from './pages/workoutAssistant/WorkoutApp';
@@ -20,9 +18,7 @@ function App() {
   useLayoutEffect(() => {
     const updateNavHeight = () => {
       if (navRef.current) {
-        console.log("Navbar Ref:", navRef.current);
         const height = navRef.current.offsetHeight;
-        console.log("Navbar height (offsetHeight):", height);
         setNavHeight(height);
       }
     };

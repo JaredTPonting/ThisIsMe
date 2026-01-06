@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import React from "react";
 import ReactMarkdown from "react-markdown";
 import Modal from "react-modal";
-import axios from 'axios';
 import '../styles/Projects.css';
+import { getProjects, getTags } from '../services/api.js'
 
 Modal.setAppElement('#root');
 
@@ -14,26 +14,21 @@ function Projects() {
     const [selectedProject, setSelectedProject] = useState(null);
     const [modalIsOpen, setModalIsOpen] = useState(false);
 
+    const fetchTags = async () => {
+        const data = await getTags();
+        console.log(data);
+        setTags(data);
+    }
+
+    const fetchProjects = async () => {
+        const data = await getProjects();
+        console.log(data);
+        setProjects(data);
+    }
+
     useEffect(() => {
-        axios.get("https://portfoliobackenddjango.onrender.com/api/projects/")
-        .then(response => {
-            setProjects(response.data);
-            
-        })
-        .catch(err => {
-            console.log("There was an error fetching the projects!", err);
-        });
-
-        axios.get("https://portfoliobackenddjango.onrender.com/api/tags/")
-        .then(response => {
-            setTags(response.data);
-        })
-        .catch(err => {
-            console.log("Error fetching the tags!", err);
-        });
-
-        console.log(projects);
-        console.log(tags);
+        fetchProjects();
+        fetchTags();
     }, []);
 
     const openModal = (project) => {
@@ -84,7 +79,7 @@ function Projects() {
                         </div>
                     ))
                 ) : (
-                    <p className="temp-loading">Loading Projects...</p>
+                    <p className="temp-loading">Please wait for backend to warm up!</p>
                 )}
 
                 {/* Modal */}
