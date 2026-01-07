@@ -16,13 +16,11 @@ function Projects() {
 
     const fetchTags = async () => {
         const data = await getTags();
-        console.log(data);
         setTags(data);
     }
 
     const fetchProjects = async () => {
         const data = await getProjects();
-        console.log(data);
         setProjects(data);
     }
 
@@ -72,7 +70,7 @@ function Projects() {
                 {filteredProjects.length > 0 ? (
                     filteredProjects.map((project, index) => (
                         <div key={index} className="project-card" onClick={() => openModal(project)}>
-                            <img src={project.image} alt={project.title} className="project-image"/>
+                            <img src={project.image_url} alt={project.title} className="project-image"/>
                             <h3 className="project-title">{project.title}</h3>
                             <p className="project-description">{project.description}</p>
                             <a href={project.github_url} className="project-link" target="_blank" rel="noopener noreferrer">View on GitHub</a>
@@ -97,7 +95,7 @@ function Projects() {
                             <p>{selectedProject.description}</p>
                         </div>
                         <div className="modal-content-right">
-                            <img src={selectedProject.image} alt={selectedProject.title} className="modal-image" />
+                            <img src={selectedProject.image_url} alt={selectedProject.title} className="modal-image" />
                             <a href={selectedProject.github_url} target="_blank" rel="noopener noreferrer">GitHub</a>
                             <a href={selectedProject.live_url} target="_blank" rel="noopener noreferrer">Demo</a>
                         </div>
