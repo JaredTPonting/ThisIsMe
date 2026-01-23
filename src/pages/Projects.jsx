@@ -54,19 +54,20 @@ function Projects() {
         : projects;
 
     return (
-        <div className="projects-container">
-                <div className="tags-container">
-                    {tags.map(tag => (
-                        <button
-                            key={tag.name}
-                            onClick={() => handleTagClick(tag.name)}
-                            className={selectedTags.includes(tag.name) ? "selected-tag" : "unselected-tag"}
-                        >
-                            {tag.name}
-                        </button>
-                    ))}
-                </div>
+        <div className="projects-page">
+            <div className="tags-container">
+                {tags.map(tag => (
+                    <button
+                        key={tag.name}
+                        onClick={() => handleTagClick(tag.name)}
+                        className={selectedTags.includes(tag.name) ? "selected-tag" : "unselected-tag"}
+                    >
+                        {tag.name}
+                    </button>
+                ))}
+            </div>
 
+            <div className="projects-container">
                 {filteredProjects.length > 0 ? (
                     filteredProjects.map((project, index) => (
                         <div key={index} className="project-card" onClick={() => openModal(project)}>
@@ -79,6 +80,7 @@ function Projects() {
                 ) : (
                     <p className="temp-loading">Please wait for backend to warm up!</p>
                 )}
+            </div>
 
                 {/* Modal */}
                 {selectedProject && (
@@ -105,7 +107,7 @@ function Projects() {
                     </div>
                 </Modal>
                 )}
-        </div>
+            </div>
     );
 }
 

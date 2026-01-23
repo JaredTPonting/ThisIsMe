@@ -1,9 +1,9 @@
-/* Global font */
+/* ===== Global Font ===== */
 body {
   font-family: 'Poppins', sans-serif;
 }
 
-/* Container for the whole page */
+/* ===== Container for the Whole Page ===== */
 .home-container {
   display: flex;
   flex-direction: column;
@@ -11,82 +11,172 @@ body {
   width: 100%;
   padding: 20px;
   margin: 50px auto;
+  animation: fadeIn 0.6s ease forwards;
 }
 
-/* Welcome box (Intro section) */
+/* ===== Welcome Box (Intro Section) ===== */
 .intro-box {
   display: flex;
   flex-direction: row;
   align-items: center;
   width: 100%;
   max-width: 900px;
-  padding: 20px;
-  margin-bottom: 20px;
-  border-radius: 10px;
+  padding: 30px;
+  margin-bottom: 40px;
+  border-radius: var(--radius-lg);
+  animation: fadeInUp 0.7s ease forwards;
 }
 
-/* Styling for the Welcome text */
+/* Welcome Text */
 .intro-box h1 {
-  font-size: clamp(2rem, 8vw, 8rem);
-  font-weight: bold;
+  font-size: clamp(2.5rem, 8vw, 6rem);
+  font-weight: 800;
   margin: 0;
-  padding-left: 20px;
+  padding-left: 30px;
+  background: linear-gradient(135deg, var(--color-dark) 0%, #444 50%, var(--color-accent) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -2px;
 }
 
-
-/* Profile section with image */
+/* ===== Profile Section ===== */
 .profile-section {
   margin-bottom: 20px;
-  transition: transform 0.3s ease;
+  transition: all var(--transition-normal);
+  position: relative;
 }
 
 .profile-pic {
-  width: 150px;
-  height: 150px;
+  width: 160px;
+  height: 160px;
   border-radius: 50%;
   object-fit: cover;
-  border: 5px solid #E76F51;  /* ORANGE */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 4px solid transparent;
+  background: linear-gradient(var(--color-light), var(--color-light)) padding-box,
+              linear-gradient(135deg, var(--color-accent), var(--color-accent-warm)) border-box;
+  box-shadow: var(--shadow-lg);
+  transition: all var(--transition-slow);
 }
 
-.profile-section:hover img {
-    transform: scale(2);
-    transition: 0.3s ease;
+.profile-section:hover .profile-pic {
+  transform: scale(1.08);
+  box-shadow: var(--shadow-hover), 0 0 30px rgba(231, 111, 81, 0.3);
 }
 
-/* Container for the text boxes */
+/* ===== Container for Text Boxes ===== */
 .text-boxes {
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  width: 80%;
+  gap: 24px;
+  width: 85%;
   max-width: 800px;
 }
 
-/* Individual text box styling */
+/* ===== Individual Text Box Styling ===== */
 .text-box {
-  background-color: #1E1E1E; /* DARK GREY */
-  color: #F5F5F5; /* OFF WHITE */
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(135deg, var(--color-dark) 0%, #252525 100%);
+  color: var(--color-light);
+  padding: 32px 36px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-normal);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  position: relative;
+  overflow: hidden;
 }
 
-/* Text box header */
+/* Subtle accent line on the left */
+.text-box::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 4px;
+  background: linear-gradient(180deg, var(--color-accent), var(--color-accent-warm));
+  opacity: 0;
+  transition: opacity var(--transition-normal);
+}
+
+.text-box:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.text-box:hover::before {
+  opacity: 1;
+}
+
+/* Staggered entrance animation */
+.text-box:nth-child(1) {
+  animation: fadeInUp 0.6s ease 0.1s forwards;
+  opacity: 0;
+}
+
+.text-box:nth-child(2) {
+  animation: fadeInUp 0.6s ease 0.2s forwards;
+  opacity: 0;
+}
+
+.text-box:nth-child(3) {
+  animation: fadeInUp 0.6s ease 0.3s forwards;
+  opacity: 0;
+}
+
+/* Text Box Header */
 .text-box h2 {
-  margin: 0 0 10px;
-  font-size: 1.8rem;
+  margin: 0 0 16px;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--color-light);
+  position: relative;
+  display: inline-block;
 }
 
-/* Text box paragraph */
+.text-box h2::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 40px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-accent), var(--color-accent-warm));
+  border-radius: 2px;
+}
+
+/* Text Box Paragraph */
 .text-box p {
-  font-size: 1.1rem;*/
-  color: #F5F5F5;
+  font-size: 1.05rem;
+  color: rgba(245, 245, 245, 0.9);
+  line-height: 1.7;
+  margin: 0;
 }
 
-/* Responsive tweaks */
+/* ===== Responsive Tweaks ===== */
 @media (max-width: 768px) {
+  .intro-box {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .intro-box h1 {
+    padding-left: 0;
+    padding-top: 20px;
+    font-size: clamp(2rem, 10vw, 4rem);
+  }
+
   .text-boxes {
-    max-width: 95%;
+    width: 95%;
+  }
+
+  .text-box {
+    padding: 24px;
+  }
+
+  .profile-pic {
+    width: 140px;
+    height: 140px;
   }
 }
