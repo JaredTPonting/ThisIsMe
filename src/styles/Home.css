@@ -1,182 +1,208 @@
-/* ===== Global Font ===== */
+/* ===== BRUTALIST HOME PAGE ===== */
+
 body {
-  font-family: 'Poppins', sans-serif;
+    font-family: var(--font-display);
 }
 
-/* ===== Container for the Whole Page ===== */
+/* Container */
 .home-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  padding: 20px;
-  margin: 50px auto;
-  animation: fadeIn 0.6s ease forwards;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 40px 20px;
+    margin: 60px auto 0;
+    max-width: 1000px;
 }
 
-/* ===== Welcome Box (Intro Section) ===== */
+/* ===== Intro Section ===== */
 .intro-box {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  width: 100%;
-  max-width: 900px;
-  padding: 30px;
-  margin-bottom: 40px;
-  border-radius: var(--radius-lg);
-  animation: fadeInUp 0.7s ease forwards;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    padding: 0;
+    margin-bottom: 60px;
+    animation: fadeInUp 0.5s ease forwards;
 }
 
-/* Welcome Text */
 .intro-box h1 {
-  font-size: clamp(2.5rem, 8vw, 6rem);
-  font-weight: 800;
-  margin: 0;
-  padding-left: 30px;
-  background: linear-gradient(135deg, var(--color-dark) 0%, #444 50%, var(--color-accent) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  letter-spacing: -2px;
+    font-family: var(--font-mono);
+    font-size: clamp(3rem, 12vw, 8rem);
+    font-weight: 700;
+    margin: 0;
+    padding-left: 30px;
+    letter-spacing: -4px;
+    line-height: 0.9;
+    color: var(--color-black);
+    text-transform: uppercase;
+    position: relative;
+}
+
+.intro-box h1::after {
+    content: '_';
+    color: var(--color-primary);
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
 }
 
 /* ===== Profile Section ===== */
 .profile-section {
-  margin-bottom: 20px;
-  transition: all var(--transition-normal);
-  position: relative;
+    flex-shrink: 0;
+    transition: transform var(--transition-bounce);
 }
 
 .profile-pic {
-  width: 160px;
-  height: 160px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 4px solid transparent;
-  background: linear-gradient(var(--color-light), var(--color-light)) padding-box,
-              linear-gradient(135deg, var(--color-accent), var(--color-accent-warm)) border-box;
-  box-shadow: var(--shadow-lg);
-  transition: all var(--transition-slow);
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border: var(--border-thick);
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-normal);
+    filter: grayscale(100%);
 }
 
 .profile-section:hover .profile-pic {
-  transform: scale(1.08);
-  box-shadow: var(--shadow-hover), 0 0 30px rgba(231, 111, 81, 0.3);
+    filter: grayscale(0%);
+    box-shadow: var(--shadow-color);
+    transform: rotate(-3deg);
 }
 
-/* ===== Container for Text Boxes ===== */
+/* ===== Text Boxes Container ===== */
 .text-boxes {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-  width: 85%;
-  max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
 }
 
-/* ===== Individual Text Box Styling ===== */
+/* ===== Individual Text Box ===== */
 .text-box {
-  background: linear-gradient(135deg, var(--color-dark) 0%, #252525 100%);
-  color: var(--color-light);
-  padding: 32px 36px;
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-md);
-  transition: all var(--transition-normal);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  position: relative;
-  overflow: hidden;
+    background-color: var(--color-white);
+    color: var(--color-black);
+    padding: 32px;
+    border: var(--border-thick);
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-normal);
+    position: relative;
+    overflow: hidden;
 }
 
-/* Subtle accent line on the left */
+/* Colored top bar */
 .text-box::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 4px;
-  background: linear-gradient(180deg, var(--color-accent), var(--color-accent-warm));
-  opacity: 0;
-  transition: opacity var(--transition-normal);
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 8px;
+    background-color: var(--color-primary);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform var(--transition-normal);
 }
 
 .text-box:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-lg);
+    transform: translate(-4px, -4px);
+    box-shadow: 10px 10px 0 var(--color-black);
 }
 
 .text-box:hover::before {
-  opacity: 1;
+    transform: scaleX(1);
 }
 
-/* Staggered entrance animation */
+/* Staggered animations */
 .text-box:nth-child(1) {
-  animation: fadeInUp 0.6s ease 0.1s forwards;
-  opacity: 0;
+    animation: slideIn 0.4s ease 0.1s forwards;
+    opacity: 0;
 }
 
 .text-box:nth-child(2) {
-  animation: fadeInUp 0.6s ease 0.2s forwards;
-  opacity: 0;
+    animation: slideIn 0.4s ease 0.2s forwards;
+    opacity: 0;
 }
 
 .text-box:nth-child(3) {
-  animation: fadeInUp 0.6s ease 0.3s forwards;
-  opacity: 0;
+    animation: slideIn 0.4s ease 0.3s forwards;
+    opacity: 0;
+}
+
+/* Different accent colors for each box */
+.text-box:nth-child(1)::before {
+    background-color: var(--color-primary);
+}
+
+.text-box:nth-child(2)::before {
+    background-color: var(--color-neon);
+}
+
+.text-box:nth-child(3)::before {
+    background-color: var(--color-accent);
 }
 
 /* Text Box Header */
 .text-box h2 {
-  margin: 0 0 16px;
-  font-size: 1.6rem;
-  font-weight: 600;
-  color: var(--color-light);
-  position: relative;
-  display: inline-block;
+    margin: 0 0 16px;
+    font-family: var(--font-mono);
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--color-black);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
 }
 
-.text-box h2::after {
-  content: '';
-  position: absolute;
-  bottom: -4px;
-  left: 0;
-  width: 40px;
-  height: 3px;
-  background: linear-gradient(90deg, var(--color-accent), var(--color-accent-warm));
-  border-radius: 2px;
+.text-box h2::before {
+    content: '//';
+    color: var(--color-primary);
+    font-weight: 400;
 }
 
 /* Text Box Paragraph */
 .text-box p {
-  font-size: 1.05rem;
-  color: rgba(245, 245, 245, 0.9);
-  line-height: 1.7;
-  margin: 0;
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    color: var(--color-gray);
+    line-height: 1.7;
+    margin: 0;
 }
 
-/* ===== Responsive Tweaks ===== */
+/* ===== Responsive ===== */
 @media (max-width: 768px) {
-  .intro-box {
-    flex-direction: column;
-    text-align: center;
-    padding: 20px;
-  }
+    .home-container {
+        padding: 20px 16px;
+        margin-top: 40px;
+    }
 
-  .intro-box h1 {
-    padding-left: 0;
-    padding-top: 20px;
-    font-size: clamp(2rem, 10vw, 4rem);
-  }
+    .intro-box {
+        flex-direction: column;
+        text-align: center;
+        margin-bottom: 40px;
+    }
 
-  .text-boxes {
-    width: 95%;
-  }
+    .intro-box h1 {
+        padding-left: 0;
+        padding-top: 24px;
+        font-size: clamp(2.5rem, 15vw, 5rem);
+        letter-spacing: -2px;
+    }
 
-  .text-box {
-    padding: 24px;
-  }
+    .profile-pic {
+        width: 120px;
+        height: 120px;
+    }
 
-  .profile-pic {
-    width: 140px;
-    height: 140px;
-  }
+    .text-box {
+        padding: 24px;
+    }
+
+    .text-box h2 {
+        font-size: 1.2rem;
+    }
 }
