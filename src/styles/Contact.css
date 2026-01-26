@@ -1,4 +1,4 @@
-/* ===== BRUTALIST CONTACT PAGE ===== */
+/* ===== MODERN CONTACT PAGE ===== */
 
 .contact-container {
     display: flex;
@@ -13,42 +13,73 @@
 
 /* ===== Contact Box ===== */
 .contact-box {
-    background-color: var(--color-primary);
-    color: var(--color-white);
+    background: var(--glass-bg);
+    backdrop-filter: var(--backdrop-blur);
+    -webkit-backdrop-filter: var(--backdrop-blur);
+    color: var(--color-text);
     padding: 0;
     width: 100%;
-    max-width: 450px;
-    border: var(--border-thick);
+    max-width: 420px;
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-xl);
     box-shadow: var(--shadow-lg);
-    font-family: var(--font-display);
-    animation: fadeInUp 0.5s ease forwards;
+    font-family: var(--font-sans);
+    animation: fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
     position: relative;
     overflow: hidden;
 }
 
+/* Gradient border effect */
+.contact-box::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    background: var(--gradient-primary);
+    border-radius: inherit;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity var(--transition-normal);
+}
+
+.contact-box:hover::before {
+    opacity: 1;
+}
+
 /* ===== Contact Header ===== */
 .contact-header {
-    font-family: var(--font-mono);
+    font-family: var(--font-sans);
     text-align: left;
-    font-size: 1.6rem;
-    font-weight: 700;
+    font-size: 1.5rem;
+    font-weight: 600;
     margin: 0;
-    padding: 20px 24px;
-    background-color: var(--color-black);
-    color: var(--color-white);
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    border-bottom: var(--border-thick);
+    padding: 28px 28px;
+    background: var(--gradient-subtle);
+    color: var(--color-text);
+    letter-spacing: -0.5px;
+    border-bottom: 1px solid var(--color-border);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.contact-header::before {
+    content: '';
+    width: 10px;
+    height: 10px;
+    background: var(--gradient-primary);
+    border-radius: 50%;
+    animation: pulse 2s ease-in-out infinite;
 }
 
 /* ===== Contact List ===== */
 .contact-list {
     list-style: none;
-    padding: 0;
+    padding: 8px;
     margin: 0;
     display: flex;
     flex-direction: column;
     width: 100%;
+    gap: 4px;
 }
 
 .contact-list li {
@@ -56,72 +87,87 @@
     align-items: center;
     width: 100%;
     gap: 16px;
-    font-size: 1.1rem;
-    padding: 20px 24px;
-    border-bottom: var(--border-thick);
-    transition: all var(--transition-fast);
+    font-size: 1rem;
+    padding: 16px 20px;
+    border-radius: var(--radius-lg);
+    transition: all var(--transition-normal);
     cursor: pointer;
+    position: relative;
+    overflow: hidden;
 }
 
-.contact-list li:last-child {
-    border-bottom: none;
+.contact-list li::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--gradient-glow);
+    opacity: 0;
+    transition: opacity var(--transition-normal);
+    border-radius: inherit;
 }
 
 .contact-list li:hover {
-    background-color: var(--color-primary-dark);
-    padding-left: 32px;
+    background: var(--color-surface);
+}
+
+.contact-list li:hover::before {
+    opacity: 1;
 }
 
 /* ===== Contact Links ===== */
 .contact-list li a,
 .email-button {
     text-decoration: none;
-    color: var(--color-white);
+    color: var(--color-text-muted);
     background: none;
     border: none;
     cursor: pointer;
-    font-family: var(--font-mono);
-    font-size: 1rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+    font-weight: 500;
     transition: all var(--transition-fast);
     padding: 0;
+    position: relative;
+    z-index: 1;
 }
 
 .contact-list li:hover a,
 .contact-list li:hover .email-button {
-    color: var(--color-accent);
+    color: var(--color-text);
 }
 
 /* ===== Contact Icons ===== */
 .contact-icon {
-    width: 28px;
-    height: 28px;
+    width: 24px;
+    height: 24px;
     object-fit: contain;
-    filter: brightness(0) invert(1);
+    filter: brightness(0) invert(0.6);
     flex-shrink: 0;
-    transition: transform var(--transition-fast);
+    transition: all var(--transition-normal);
+    position: relative;
+    z-index: 1;
 }
 
 .contact-list li:hover .contact-icon {
-    transform: scale(1.15) rotate(-5deg);
+    filter: brightness(0) invert(1);
+    transform: scale(1.1);
 }
 
 /* ===== Email Copied Popup ===== */
 .popup {
     margin-left: auto;
-    background-color: var(--color-black);
-    color: var(--color-white);
-    font-family: var(--font-mono);
+    background: var(--gradient-primary);
+    color: var(--color-text);
+    font-family: var(--font-sans);
     font-size: 0.75rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    padding: 6px 12px;
-    border: 2px solid var(--color-white);
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: var(--radius-full);
     display: inline-block;
-    animation: shake 0.3s ease;
+    position: relative;
+    z-index: 1;
+    animation: fadeIn 0.3s ease;
+    box-shadow: var(--shadow-sm);
 }
 
 /* ===== Responsive ===== */
@@ -132,21 +178,22 @@
 
     .contact-box {
         margin: 0;
+        border-radius: var(--radius-lg);
     }
 
     .contact-header {
-        font-size: 1.4rem;
-        padding: 16px 20px;
+        font-size: 1.3rem;
+        padding: 24px 20px;
+    }
+
+    .contact-list {
+        padding: 6px;
     }
 
     .contact-list li {
-        font-size: 1rem;
-        padding: 16px 20px;
-        gap: 12px;
-    }
-
-    .contact-list li:hover {
-        padding-left: 28px;
+        font-size: 0.95rem;
+        padding: 14px 16px;
+        gap: 14px;
     }
 
     .contact-list li a,
@@ -156,11 +203,11 @@
 
     .popup {
         font-size: 0.7rem;
-        padding: 4px 8px;
+        padding: 5px 10px;
     }
 
     .contact-icon {
-        width: 24px;
-        height: 24px;
+        width: 22px;
+        height: 22px;
     }
 }

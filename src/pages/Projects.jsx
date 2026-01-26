@@ -56,7 +56,7 @@ function Projects() {
     return (
         <div className="projects-page">
             <div className="tags-container">
-                {tags.map(tag => (
+                {[...tags].sort((a, b) => a.name.localeCompare(b.name)).map(tag => (
                     <button
                         key={tag.name}
                         onClick={() => handleTagClick(tag.name)}
