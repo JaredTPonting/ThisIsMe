@@ -158,12 +158,21 @@
     transform: translateX(4px);
 }
 
-.temp-loading {
+.projects-message {
+    grid-column: 1 / -1;
     font-family: 'Poppins', sans-serif;
     text-align: center;
-    padding: 40px;
+    padding: 60px 40px;
     color: var(--colour-text-muted);
+    font-size: 1.1rem;
+}
+
+.projects-message.loading {
     animation: pulse 1.5s ease-in-out infinite;
+}
+
+.projects-message.no-results {
+    animation: fadeIn 0.3s ease forwards;
 }
 
 @keyframes pulse {

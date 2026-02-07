@@ -68,7 +68,11 @@ function Projects() {
                 </div>
 
             <div className="projects-container">
-                {filteredProjects.length > 0 ? (
+                {projects.length === 0 ? (
+                    <p className="projects-message loading">Please wait for backend to warm up!</p>
+                ) : filteredProjects.length === 0 ? (
+                    <p className="projects-message no-results">No projects match the selected tags</p>
+                ) : (
                     filteredProjects.map((project, index) => (
                         <div key={index} className="project-card" onClick={() => openModal(project)}>
                             <div>
@@ -81,8 +85,6 @@ function Projects() {
                             </div>
                         </div>
                     ))
-                ) : (
-                    <p className="temp-loading">Please wait for backend to warm up!</p>
                 )}
             </div>
                 {/* Modal */}
