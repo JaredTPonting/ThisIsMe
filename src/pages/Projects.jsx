@@ -54,7 +54,7 @@ function Projects() {
         : projects;
 
     return (
-        <div className="projects-container">
+        <div className="projects-page">
                 <div className="tags-container">
                     {tags.map(tag => (
                         <button
@@ -67,19 +67,26 @@ function Projects() {
                     ))}
                 </div>
 
-                {filteredProjects.length > 0 ? (
+            <div className="projects-container">
+                {projects.length === 0 ? (
+                    <p className="projects-message loading">Please wait for backend to warm up!</p>
+                ) : filteredProjects.length === 0 ? (
+                    <p className="projects-message no-results">No projects match the selected tags</p>
+                ) : (
                     filteredProjects.map((project, index) => (
                         <div key={index} className="project-card" onClick={() => openModal(project)}>
-                            <img src={project.image_url} alt={project.title} className="project-image"/>
-                            <h3 className="project-title">{project.title}</h3>
-                            <p className="project-description">{project.description}</p>
-                            <a href={project.github_url} className="project-link" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+                            <div>
+                                <img src={project.image_url} alt={project.title} className="project-image"/>
+                            </div>
+                            <div className="project-card-content">
+                                <h3 className="project-title">{project.title}</h3>
+                                <p className="project-description">{project.description}</p>
+                                <a href={project.github_url} className="project-link" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+                            </div>
                         </div>
                     ))
-                ) : (
-                    <p className="temp-loading">Please wait for backend to warm up!</p>
                 )}
-
+            </div>
                 {/* Modal */}
                 {selectedProject && (
                     <Modal 
